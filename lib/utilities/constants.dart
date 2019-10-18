@@ -12,3 +12,10 @@ const kButtonTextStyle = TextStyle(
   fontWeight: FontWeight.w400,
   letterSpacing: 2.5,
 );
+
+const kAlertDialogButtonTextStyle = TextStyle(
+  fontSize: 15.0,
+  fontFamily: 'Roboto',
+  fontWeight: FontWeight.w200,
+  letterSpacing: 1.5,
+);

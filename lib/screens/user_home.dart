@@ -15,24 +15,6 @@ class _UserHomeState extends State<UserHome> {
 
   @override
   Widget build(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          content: Text('Welcome ${widget.userName}'),
-          contentPadding: EdgeInsets.all(16.0),
-          actions: <Widget>[
-            AlertDialogButton(
-              text: 'DISMISS',
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            )
-          ],
-        );
-      },
-    );
-
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(

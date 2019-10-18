@@ -14,15 +14,15 @@ class AlertDialogButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         text,
-        style: kButtonTextStyle,
+        style: kAlertDialogButtonTextStyle,
         textAlign: TextAlign.center,
       ),
       color: Colors.orange.shade100,
-      elevation: 3.0,
+      elevation: 2.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(6.0),
       ),
-      height: 60.0,
+      height: 40.0,
     );
   }
 }
