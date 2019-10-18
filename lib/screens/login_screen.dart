@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 text: "GO",
                 onPressed: () async {
                   if (boys_info[inputBox.input] != null) {
-                    showDialog(
+                    await showDialog(
                       context: context,
                       builder: (context) {
                         return AlertDialog(
