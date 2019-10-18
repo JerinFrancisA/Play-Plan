@@ -13,6 +13,11 @@ class OtherPlan extends StatefulWidget {
 class _OtherPlanState extends State<OtherPlan> {
   String datePicked;
   String timePicked;
+  InputBox planName = InputBox(
+    keyboardType: TextInputType.text,
+    hintText: 'Specify Plan',
+    labelText: 'Plan Name',
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +27,7 @@ class _OtherPlanState extends State<OtherPlan> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            InputBox(
-              keyboardType: TextInputType.text,
-              hintText: 'Specify Plan',
-              labelText: 'Plan Name',
-            ),
+            planName,
             Button(
               text: 'PICK DATE AND TIME',
               onPressed: () {
@@ -42,6 +43,7 @@ class _OtherPlanState extends State<OtherPlan> {
                   },
                   locale: LocaleType.en,
                 );
+
               },
             ),
           ],
