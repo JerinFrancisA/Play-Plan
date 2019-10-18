@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:play_plan/utilities/boys_info.dart';
+import 'package:play_plan/utilities/constants.dart';
 
 class PickFriends extends StatefulWidget {
-  PickFriends({Key key}) : super(key: key);
+  final planName;
+  final planDate;
+  final planTime;
+
+  PickFriends({@required this.planName,
+    @required this.planDate,
+    @required this.planTime});
 
   @override
   _PickFriendsState createState() => _PickFriendsState();
@@ -18,9 +25,10 @@ class _PickFriendsState extends State<PickFriends> {
           centerTitle: true,
         ),
         body: ListView.builder(
-          itemCount: boysInfo.length,
+          itemCount: boysPhoneNumbers.length,
           itemBuilder: (BuildContext context, int index) {
-            return Text(boysInfo[index]);
+            return Text(
+              boysInfo[boysPhoneNumbers[index]], style: kDefaultTextStyle,);
           },
         ),
       ),

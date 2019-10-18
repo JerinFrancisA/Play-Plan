@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:play_plan/screens/pick_friends.dart';
 import 'package:play_plan/custom_widgets/button.dart';
 import 'package:play_plan/utilities/constants.dart';
 
@@ -43,7 +44,7 @@ class _ConfirmPlanState extends State<ConfirmPlan> {
             Button(
               text: 'CONFIRM',
               onPressed: () {
-
+                Navigator.push(context, MaterialPageRoute(context, builder: (context) => PickFriends(planDate: widget.planDate, planName: widget.planName, planTime: widget.planTime,)));
               },
             ),
           ],
