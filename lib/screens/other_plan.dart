@@ -37,13 +37,16 @@ class _OtherPlanState extends State<OtherPlan> {
                   currentTime: DateTime.now(),
                   onConfirm: (date) {
                     datePicked = date.toString().split(' ')[0].toString();
-                    timePicked = date.toString().split(' ')[1].toString().substring(0, 8);
+                    timePicked = date
+                        .toString()
+                        .split(' ')[1]
+                        .toString()
+                        .substring(0, 8);
                     print('date : ' + datePicked);
                     print('time : ' + timePicked);
                   },
                   locale: LocaleType.en,
                 );
-
               },
             ),
           ],
