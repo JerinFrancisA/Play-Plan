@@ -18,20 +18,8 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              TextField(
-                keyboardType: TextInputType.numberWithOptions(),
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.blue,
-                ),
-                onChanged: (val) {
-                  inputNumber = val;
-                },
-              ),
-              MaterialButton(
-                onPressed: () {},
-                child: Text('Go'),
-              ),
+              InputBox(),
+              Button(),
             ],
           ),
         ),
@@ -39,3 +27,6 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
+
+
