@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:play_plan/custom_widgets/button.dart';
 import 'package:play_plan/custom_widgets/inputbox.dart';
 
@@ -14,6 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
     labelText: "Phone Number",
     keyboardType: TextInputType.numberWithOptions(),
     maxLength: 10,);
+  QuerySnapshot users;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,9 @@ class _LoginScreenState extends State<LoginScreen> {
               inputBox,
               Button(
                 text: "Go",
-                onPressed: () {
+                onPressed: () async {
+                  users = await Firestore.instance.collectionGroup('boys_info').getDocuments();
+                  print(users);
                   print(inputBox.input);
                 },
               ),

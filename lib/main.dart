@@ -5,9 +5,7 @@ main() => runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Play Plan',
-        theme: ThemeData(
-          primarySwatch: Colors.black,
-        ),
+        theme: ThemeData(),
         initialRoute: LoginScreen.routeName,
         routes: {
           LoginScreen.routeName: (context) => LoginScreen(),
