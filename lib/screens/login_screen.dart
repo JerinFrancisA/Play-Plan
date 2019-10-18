@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:play_plan/screens/user_home.dart';
 import 'package:play_plan/custom_widgets/alert_dialog_button.dart';
 import 'package:play_plan/custom_widgets/button.dart';
@@ -21,7 +20,6 @@ class _LoginScreenState extends State<LoginScreen> {
     keyboardType: TextInputType.numberWithOptions(),
     maxLength: 10,
   );
-  List<DocumentSnapshot> users;
 
   @override
   Widget build(BuildContext context) {
@@ -45,13 +43,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 Button(
                   text: "GO",
                   onPressed: () async {
-                    if (boys_info[inputBox.input] != null) {
+                    if (boysInfo[inputBox.input] != null) {
                       await showDialog(
                         context: context,
                         builder: (context) {
                           return AlertDialog(
                             content: Text(
-                              'Welcome ${boys_info[inputBox.input]}',
+                              'Welcome ${boysInfo[inputBox.input]}',
                               style: kDefaultTextStyle,
                             ),
                             contentPadding: EdgeInsets.all(16.0),
@@ -70,13 +68,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => UserHome(
-                            userName: boys_info[inputBox.input],
+                            userName: boysInfo[inputBox.input],
                             userPhoneNumber: inputBox.input,
                           ),
                         ),
                       );
                     }
-                    ;
                   },
                 ),
               ],
