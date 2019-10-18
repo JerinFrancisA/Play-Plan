@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Button(
                 text: "Go",
                 onPressed: () {
-                  print(inputBox.)
+                  print(inputBox.input);
                 },
               ),
             ],

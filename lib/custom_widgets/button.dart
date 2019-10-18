@@ -16,7 +16,8 @@ class Button extends StatelessWidget {
         style: TextStyle(),
         textAlign: TextAlign.center,
       ),
-      elevation: 5.0,
+      color: Colors.orange,
+      elevation: 3.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(6.0),
       ),
