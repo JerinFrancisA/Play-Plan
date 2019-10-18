@@ -37,10 +37,11 @@ class _UserHomeState extends State<UserHome> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   BigBox(
-                      onTap: () {},
-                      padding: const EdgeInsets.only(
-                          top: 28.0, left: 28.0, right: 28.0, bottom: 14.0),
-                      text: 'PLANS'),
+                    text: 'PLANS',
+                    onTap: () {},
+                    padding: EdgeInsets.only(
+                        top: 28.0, left: 28.0, right: 28.0, bottom: 14.0),
+                  ),
                   BigBox(
                     text: 'VIEW PLANS',
                     onTap: () {},
