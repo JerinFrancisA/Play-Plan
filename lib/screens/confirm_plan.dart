@@ -44,7 +44,16 @@ class _ConfirmPlanState extends State<ConfirmPlan> {
             Button(
               text: 'CONFIRM',
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(context, builder: (context) => PickFriends(planDate: widget.planDate, planName: widget.planName, planTime: widget.planTime,)));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PickFriends(
+                      planName: widget.planName,
+                      planDate: widget.planDate,
+                      planTime: widget.planTime,
+                    ),
+                  ),
+                );
               },
             ),
           ],

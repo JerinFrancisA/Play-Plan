@@ -7,9 +7,10 @@ class PickFriends extends StatefulWidget {
   final planDate;
   final planTime;
 
-  PickFriends({@required this.planName,
-    @required this.planDate,
-    @required this.planTime});
+  PickFriends(
+      {@required this.planName,
+      @required this.planDate,
+      @required this.planTime});
 
   @override
   _PickFriendsState createState() => _PickFriendsState();
@@ -28,7 +29,9 @@ class _PickFriendsState extends State<PickFriends> {
           itemCount: boysPhoneNumbers.length,
           itemBuilder: (BuildContext context, int index) {
             return Text(
-              boysInfo[boysPhoneNumbers[index]], style: kDefaultTextStyle,);
+              boysInfo[boysPhoneNumbers[index]],
+              style: kDefaultTextStyle,
+            );
           },
         ),
       ),
