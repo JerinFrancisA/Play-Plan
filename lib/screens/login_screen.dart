@@ -22,6 +22,54 @@ class _LoginScreenState extends State<LoginScreen> {
   );
   List<DocumentSnapshot> users;
 
+  Future<void> verifyPhoneNumber() async {
+    await Firestore.instance
+        .collectionGroup('boys_info')
+        .getDocuments()
+        .then((val) {
+      users = val.documents;
+      print('sd');
+      for (int i = 0; i < users.length; i++) {
+        print(users[i].data['phone']);
+        if (users[i].data['phone'] == inputBox.input) {
+          print("success");
+          showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                content: Text(
+                  'Welcome ${users[i].data['name']}',
+                  style: kDefaultTextStyle,
+                ),
+                contentPadding: EdgeInsets.all(16.0),
+                actions: <Widget>[
+                  AlertDialogButton(
+                    text: 'DISMISS',
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  )
+                ],
+              );
+            },
+          );
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => UserHome(
+                userName: users[i].data['name'],
+                userPhoneNumber: users[i].data['phone'],
+              ),
+            ),
+          );
+        } else {
+          print('wait boss');
+        }
+      }
+    });
+    print('okaayy..');
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -34,44 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Button(
                 text: "GO",
                 onPressed: () async {
-                  var temp = await Firestore.instance
-                      .collectionGroup('boys_info')
-                      .getDocuments();
-                  users = temp.documents;
-                  for (int i = 0; i < users.length; i++) {
-                    if (users[i].data['phone'] == inputBox.input) {
-                      print("success");
-                      await showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            content: Text(
-                              'Welcome ${users[i].data['name']}',
-                              style: kDefaultTextStyle,
-                            ),
-                            contentPadding: EdgeInsets.all(16.0),
-                            actions: <Widget>[
-                              AlertDialogButton(
-                                text: 'DISMISS',
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                              )
-                            ],
-                          );
-                        },
-                      );
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => UserHome(
-                            userName: users[i].data['name'],
-                            userPhoneNumber: users[i].data['phone'],
-                          ),
-                        ),
-                      );
-                    }
-                  }
+                  await verifyPhoneNumber();
                 },
               ),
             ],
