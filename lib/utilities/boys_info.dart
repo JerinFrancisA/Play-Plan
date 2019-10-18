@@ -1,4 +1,9 @@
 Map<String, String> boys_info = {
-  'Jerin': '7975235842',
-  'Fawaz': '7348985764',
+  '7975235842': 'Jerin',
+  '7348985764': 'Fawaz',
 };
+
+List<String> boys_phoneNumbers = [
+  '7975235842',
+  '7348985764',
+];
