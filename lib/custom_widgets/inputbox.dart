@@ -5,11 +5,13 @@ class InputBox extends StatelessWidget {
   final keyboardType;
   final hintText;
   final labelText;
+  final maxLength;
 
   InputBox(
       {@required this.keyboardType,
       @required this.hintText,
-      @required this.labelText});
+      @required this.labelText,
+      @required this.maxLength});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +19,7 @@ class InputBox extends StatelessWidget {
       padding: const EdgeInsets.all(18.0),
       child: TextField(
         keyboardType: keyboardType,
+        maxLength: maxLength,
         decoration: InputDecoration(
           hintText: hintText,
           labelText: labelText,
