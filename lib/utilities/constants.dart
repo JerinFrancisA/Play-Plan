@@ -6,6 +6,13 @@ const kDefaultTextStyle = TextStyle(
   fontWeight: FontWeight.w300,
 );
 
+const kHeaderTextStyle = TextStyle(
+  fontSize: 30.0,
+  fontFamily: 'Roboto',
+  fontWeight: FontWeight.w400,
+  letterSpacing: 2.0,
+);
+
 const kButtonTextStyle = TextStyle(
   fontSize: 25.0,
   fontFamily: 'Roboto',
