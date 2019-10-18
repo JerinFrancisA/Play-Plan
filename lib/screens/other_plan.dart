@@ -11,38 +11,38 @@ class OtherPlan extends StatefulWidget {
 }
 
 class _OtherPlanState extends State<OtherPlan> {
+  String datePicked;
+  String timePicked;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(),
-        body: ListView(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                InputBox(
-                  keyboardType: TextInputType.text,
-                  hintText: 'Specify Plan',
-                  labelText: 'Plan Name',
-                ),
-                Button(
-                  text: 'PICK DATE AND TIME',
-                  onPressed: () {
-                    DatePicker.showDatePicker(
-                      context,
-                      showTitleActions: true,
-                      minTime: DateTime.now(),
-                      maxTime: DateTime(2030, 12, 12),
-                      onConfirm: (date) {
-                        print('confirm $date');
-                      },
-                      currentTime: DateTime.now(),
-                      locale: LocaleType.en,
-                    );
+            InputBox(
+              keyboardType: TextInputType.text,
+              hintText: 'Specify Plan',
+              labelText: 'Plan Name',
+            ),
+            Button(
+              text: 'PICK DATE AND TIME',
+              onPressed: () {
+                DatePicker.showDateTimePicker(
+                  context,
+                  showTitleActions: true,
+                  currentTime: DateTime.now(),
+                  onConfirm: (date) {
+                    datePicked = date.toString().split(' ')[0].toString();
+                    timePicked = date.toString().split(' ')[1].toString().substring(0, 8);
+                    print('date : ' + datePicked);
+                    print('time : ' + timePicked);
                   },
-                ),
-              ],
+                  locale: LocaleType.en,
+                );
+              },
             ),
           ],
         ),
