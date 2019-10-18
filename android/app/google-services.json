@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "142917329634",
+    "firebase_url": "https://hephaestus-5f1b5.firebaseio.com",
+    "project_id": "hephaestus-5f1b5",
+    "storage_bucket": "hephaestus-5f1b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142917329634:android:64d5fb9acff5195f5a34bb",
+        "android_client_info": {
+          "package_name": "com.fawcis.play_plan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142917329634-3lrdp8hulu6tj2l9b5pjm21r2b9g11cq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiqYNv6O2LQMlQJxXIBVNbWXCN2UOr_0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142917329634-3lrdp8hulu6tj2l9b5pjm21r2b9g11cq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
