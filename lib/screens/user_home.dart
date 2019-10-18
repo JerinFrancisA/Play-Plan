@@ -12,7 +12,6 @@ class UserHome extends StatefulWidget {
 }
 
 class _UserHomeState extends State<UserHome> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -22,7 +21,15 @@ class _UserHomeState extends State<UserHome> {
           centerTitle: true,
           automaticallyImplyLeading: false,
         ),
-        body: Container(),
+        body: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Container(),
+              Container(),
+            ],
+          ),
+        ),
       ),
     );
   }
