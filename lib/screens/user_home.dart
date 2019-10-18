@@ -25,10 +25,12 @@ class _UserHomeState extends State<UserHome> {
           children: [
             Container(
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+                image: DecorationImage(
+                  image: NetworkImage(
+                      'https://cdn8.dissolve.com/p/D1028_97_086/D1028_97_086_1200.jpg'),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.2), BlendMode.darken),
                 ),
               ),
               child: Column(
@@ -43,7 +45,15 @@ class _UserHomeState extends State<UserHome> {
                         height: MediaQuery.of(context).size.width / 1.5,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.0),
-                          color: Colors.blueGrey.shade100,
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment(0.8, 0.0),
+                            colors: [
+                              const Color(0xFFFFFFEE),
+                              const Color(0xFF999999)
+                            ],
+                            tileMode: TileMode.repeated,
+                          ),
                         ),
                         child: Center(
                           child: Text(
@@ -64,7 +74,18 @@ class _UserHomeState extends State<UserHome> {
                         height: MediaQuery.of(context).size.width / 1.5,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.0),
-                          color: Colors.blueGrey.shade100,
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment(0.8, 0.0),
+                            // 10% of the width, so there are ten blinds.
+                            colors: [
+                              const Color(0xFFFFFFEE),
+                              const Color(0xFF999999)
+                            ],
+                            // whitish to gray
+                            tileMode: TileMode
+                                .repeated, // repeats the gradient over the canvas
+                          ),
                         ),
                         child: Center(
                           child: Text(
