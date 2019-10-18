@@ -65,13 +65,16 @@ class _PickFriendsState extends State<PickFriends> {
               if (selectedFriends[i]) print(boysInfo[boysPhoneNumbers[i]]);
             }
             Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => CompletePlanAndWhatsApp(
-                        selectedFriends: selectedFriends,
-                        planName: widget.planName,
-                        date: widget.planDate,
-                        time: widget.planTime)));
+              context,
+              MaterialPageRoute(
+                builder: (context) => CompletePlanAndWhatsApp(
+                  selectedFriends: selectedFriends,
+                  planName: widget.planName,
+                  date: widget.planDate,
+                  time: widget.planTime,
+                ),
+              ),
+            );
           },
           child: Icon(Icons.done),
         ),
