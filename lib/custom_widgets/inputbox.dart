@@ -1,27 +1,31 @@
 import 'package:flutter/material.dart';
 
-class InputBox extends StatefulWidget {
-  const InputBox({
-    Key key,
-  }) : super(key: key);
+class InputBox extends StatelessWidget {
+  String input;
+  final keyboardType;
+  final hintText;
+  final labelText;
 
-  @override
-  _InputBoxState createState() => _InputBoxState();
-}
+  InputBox(
+      {@required this.keyboardType,
+      @required this.hintText,
+      @required this.labelText});
 
-class _InputBoxState extends State<InputBox> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: TextField(
-        keyboardType: TextInputType.numberWithOptions(),
+        keyboardType: keyboardType,
         decoration: InputDecoration(
+          hintText: hintText,
+          labelText: labelText,
+          contentPadding: EdgeInsets.all(6.0),
           filled: true,
-          fillColor: Colors.blue,
+          fillColor: Colors.brown.shade100,
         ),
         onChanged: (val) {
-
+          input = val;
         },
       ),
     );

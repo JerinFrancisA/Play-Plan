@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:play_plan/custom_widgets/button.dart';
+import 'package:play_plan/custom_widgets/inputbox.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = "LoginScreen";
@@ -8,7 +10,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  String inputNumber;
+  InputBox inputBox = InputBox();
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +20,13 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              InputBox(),
-              Button(),
+              inputBox,
+              Button(
+                text: "Go",
+                onPressed: () {
+                  print(inputBox.)
+                },
+              ),
             ],
           ),
         ),
@@ -27,6 +34,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-
-
