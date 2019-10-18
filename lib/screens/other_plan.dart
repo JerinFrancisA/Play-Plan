@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:play_plan/screens/confirm_plan.dart';
 import 'package:play_plan/custom_widgets/inputbox.dart';
 import 'package:play_plan/custom_widgets/button.dart';
+import 'package:play_plan/custom_widgets/alert_dialog_button.dart';
+import 'package:play_plan/utilities/constants.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 class OtherPlan extends StatefulWidget {
@@ -47,6 +50,36 @@ class _OtherPlanState extends State<OtherPlan> {
                   },
                   locale: LocaleType.en,
                 );
+              },
+            ),
+            Button(
+              text: 'CONFIRM',
+              onPressed: () {
+                if (datePicked == null || timePicked == null) {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        content: Text(
+                          'Date and Time not picked !',
+                          style: kDefaultTextStyle,
+                        ),
+                        contentPadding: EdgeInsets.all(16.0),
+                        actions: <Widget>[
+                          AlertDialogButton(
+                            text: 'OK',
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                }
+                else {
+                  Navigator.push(context, MaterialPageRoute(context, builder: (context) => ConfirmPlan(planName: planName.input, planDate: datePicked, planTime: timePicked)));
+                }
               },
             ),
           ],
