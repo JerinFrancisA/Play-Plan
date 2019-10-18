@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Button extends StatefulWidget {
+class Button extends StatelessWidget {
   Button({@required this.text, @required this.onPressed});
 
   final text;
@@ -8,15 +8,18 @@ class Button extends StatefulWidget {
   final onPressed;
 
   @override
-  _ButtonState createState() => _ButtonState();
-}
-
-class _ButtonState extends State<Button> {
-  @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () {},
-      child: Text('Go'),
+      onPressed: onPressed,
+      child: Text(
+        text,
+        style: TextStyle(),
+        textAlign: TextAlign.center,
+      ),
+      elevation: 5.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(6.0),
+      ),
     );
   }
 }
