@@ -39,8 +39,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   for (int i = 0; i < users.length; i++) {
                     if (users[i].data['phone'] == inputBox.input) {
                       print("success");
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => UserHome()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => UserHome(
+                            userName: users[i].data['name'],
+                            userPhoneNumber: users[i].data['phone'],
+                          ),
+                        ),
+                      );
                     }
                   }
                 },

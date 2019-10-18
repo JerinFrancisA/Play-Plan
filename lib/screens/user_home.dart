@@ -12,29 +12,36 @@ class UserHome extends StatefulWidget {
 }
 
 class _UserHomeState extends State<UserHome> {
-  @override
-  void initState() {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            content: Text('Welcome ${widget.userName}'),
-            contentPadding: EdgeInsets.all(16.0),
-            actions: <Widget>[
-              AlertDialogButton(
-                text: 'DISMISS',
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              )
-            ],
-          );
-        });
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          content: Text('Welcome ${widget.userName}'),
+          contentPadding: EdgeInsets.all(16.0),
+          actions: <Widget>[
+            AlertDialogButton(
+              text: 'DISMISS',
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            )
+          ],
+        );
+      },
+    );
+
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Plan Now'),
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+        ),
+        body: Container(),
+      ),
+    );
   }
 }
