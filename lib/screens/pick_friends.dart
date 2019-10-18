@@ -25,14 +25,24 @@ class _PickFriendsState extends State<PickFriends> {
           title: Text('Pick Friends'),
           centerTitle: true,
         ),
-        body: ListView.builder(
-          itemCount: boysPhoneNumbers.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Text(
-              boysInfo[boysPhoneNumbers[index]],
-              style: kDefaultTextStyle,
-            );
-          },
+        body: Scrollbar(
+          child: ListView.builder(
+            itemCount: boysPhoneNumbers.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Card(
+                child: ListTile(
+                  title: Text(
+                    boysInfo[boysPhoneNumbers[index]],
+                    style: kDefaultTextStyle,
+                  ),
+                ),
+                elevation: 2.5,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6.0),
+                ),
+              );
+            },
+          ),
         ),
       ),
     );

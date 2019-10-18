@@ -30,16 +30,28 @@ class _ConfirmPlanState extends State<ConfirmPlan> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Text(
-              widget.planName,
-              style: kDefaultTextStyle,
+              'Plan Details Confirmation',
+              style: kDefaultTextStyle.copyWith(
+                fontSize: 35.0,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 3.0,
+              ),
+              textAlign: TextAlign.center,
             ),
             Text(
-              widget.planDate,
+              'Plan : ${widget.planName}',
               style: kDefaultTextStyle,
+              textAlign: TextAlign.center,
             ),
             Text(
-              widget.planTime,
+              'On : ${widget.planDate}',
               style: kDefaultTextStyle,
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              'At : ${widget.planTime}',
+              style: kDefaultTextStyle,
+              textAlign: TextAlign.center,
             ),
             Button(
               text: 'CONFIRM',

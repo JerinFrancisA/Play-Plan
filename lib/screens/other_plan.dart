@@ -76,9 +76,17 @@ class _OtherPlanState extends State<OtherPlan> {
                       );
                     },
                   );
-                }
-                else {
-                  Navigator.push(context, MaterialPageRoute(context, builder: (context) => ConfirmPlan(planName: planName.input, planDate: datePicked, planTime: timePicked)));
+                } else {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ConfirmPlan(
+                        planName: planName.input,
+                        planDate: datePicked,
+                        planTime: timePicked,
+                      ),
+                    ),
+                  );
                 }
               },
             ),

@@ -13,6 +13,8 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
+String userPhoneNumber;
+
 class _LoginScreenState extends State<LoginScreen> {
   InputBox inputBox = InputBox(
     hintText: "Enter Phone Number",
@@ -44,6 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   text: "GO",
                   onPressed: () async {
                     if (boysInfo[inputBox.input] != null) {
+                      userPhoneNumber = inputBox.input;
                       await showDialog(
                         context: context,
                         builder: (context) {
