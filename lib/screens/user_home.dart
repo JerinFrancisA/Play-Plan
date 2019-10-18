@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:play_plan/custom_widgets/bigbox.dart';
+import 'package:play_plan/screens/plan_page.dart';
+import 'package:play_plan/screens/view_plan_page.dart';
 
 class UserHome extends StatefulWidget {
   UserHome({this.userName, this.userPhoneNumber});
@@ -38,13 +40,21 @@ class _UserHomeState extends State<UserHome> {
                 children: <Widget>[
                   BigBox(
                     text: 'PLANS',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => PlanPage()));
+                    },
                     padding: EdgeInsets.only(
                         top: 28.0, left: 28.0, right: 28.0, bottom: 14.0),
                   ),
                   BigBox(
                     text: 'VIEW PLANS',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ViewPlanPage()));
+                    },
                     padding: EdgeInsets.only(
                         top: 14.0, left: 28.0, right: 28.0, bottom: 28.0),
                   ),
