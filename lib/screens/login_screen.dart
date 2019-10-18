@@ -10,7 +10,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  InputBox inputBox = InputBox();
+  InputBox inputBox = InputBox(hintText: "Enter Phone Number",
+    labelText: "Phone Number",
+    keyboardType: TextInputType.numberWithOptions(),
+    maxLength: 10,);
 
   @override
   Widget build(BuildContext context) {

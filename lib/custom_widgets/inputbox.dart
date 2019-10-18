@@ -11,7 +11,7 @@ class InputBox extends StatelessWidget {
       {@required this.keyboardType,
       @required this.hintText,
       @required this.labelText,
-      @required this.maxLength});
+      this.maxLength});
 
   @override
   Widget build(BuildContext context) {
