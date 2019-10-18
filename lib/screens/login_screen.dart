@@ -23,72 +23,64 @@ class _LoginScreenState extends State<LoginScreen> {
   );
   List<DocumentSnapshot> users;
 
-//  Future<void> verifyPhoneNumber() async {
-//    await Firestore.instance
-//        .collectionGroup('boys_info')
-//        .getDocuments()
-//        .then((val) {
-//      users = val.documents;
-//      print('sd');
-//      for (int i = 0; i < users.length; i++) {
-//        print(users[i].data['phone']);
-//        if (users[i].data['phone'] == inputBox.input) {
-//          print("success");
-//        } else {
-//          print('wait boss');
-//        }
-//      }
-//    });
-//    print('okaayy..');
-//  }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              inputBox,
-              Button(
-                text: "GO",
-                onPressed: () async {
-                  if (boys_info[inputBox.input] != null) {
-                    await showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          content: Text(
-                            'Welcome ${boys_info[inputBox.input]}',
-                            style: kDefaultTextStyle,
-                          ),
-                          contentPadding: EdgeInsets.all(16.0),
-                          actions: <Widget>[
-                            AlertDialogButton(
-                              text: 'DISMISS',
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                            )
-                          ],
-                        );
-                      },
-                    );
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => UserHome(
-                          userName: boys_info[inputBox.input],
-                          userPhoneNumber: inputBox.input,
-                        ),
-                      ),
-                    );
-                  }
-                  ;
-                },
+          child: Container(
+            decoration: new BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                    'http://cdn.shopify.com/s/files/1/2398/7125/products/soccer-ball-wallpaper-hd-desktop-background-2014-soccer-ball-wallpaper--18_1024x1024.jpg?v=1511671604'),
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(
+                    Colors.white.withOpacity(0.5), BlendMode.modulate),
               ),
-            ],
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                inputBox,
+                Button(
+                  text: "GO",
+                  onPressed: () async {
+                    if (boys_info[inputBox.input] != null) {
+                      await showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            content: Text(
+                              'Welcome ${boys_info[inputBox.input]}',
+                              style: kDefaultTextStyle,
+                            ),
+                            contentPadding: EdgeInsets.all(16.0),
+                            actions: <Widget>[
+                              AlertDialogButton(
+                                text: 'DISMISS',
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              )
+                            ],
+                          );
+                        },
+                      );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => UserHome(
+                            userName: boys_info[inputBox.input],
+                            userPhoneNumber: inputBox.input,
+                          ),
+                        ),
+                      );
+                    }
+                    ;
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

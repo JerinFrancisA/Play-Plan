@@ -52,7 +52,7 @@ class _UserHomeState extends State<UserHome> {
                               const Color(0xFFFFFFEE),
                               const Color(0xFF999999)
                             ],
-                            tileMode: TileMode.repeated,
+                            tileMode: TileMode.mirror,
                           ),
                         ),
                         child: Center(
@@ -77,14 +77,11 @@ class _UserHomeState extends State<UserHome> {
                           gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment(0.8, 0.0),
-                            // 10% of the width, so there are ten blinds.
                             colors: [
                               const Color(0xFFFFFFEE),
                               const Color(0xFF999999)
                             ],
-                            // whitish to gray
-                            tileMode: TileMode
-                                .repeated, // repeats the gradient over the canvas
+                            tileMode: TileMode.mirror,
                           ),
                         ),
                         child: Center(
