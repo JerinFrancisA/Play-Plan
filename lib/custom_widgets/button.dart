@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:play_plan/utilities/constants.dart';
 
 class Button extends StatelessWidget {
   Button({@required this.text, @required this.onPressed});
@@ -13,7 +14,7 @@ class Button extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         text,
-        style: TextStyle(),
+        style: kButtonTextStyle,
         textAlign: TextAlign.center,
       ),
       color: Colors.orange.shade100,
@@ -21,6 +22,7 @@ class Button extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(6.0),
       ),
+      height: 60.0,
     );
   }
 }
