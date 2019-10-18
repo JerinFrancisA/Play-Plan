@@ -23,9 +23,19 @@ class InputBox extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hintText,
           labelText: labelText,
-          contentPadding: EdgeInsets.all(6.0),
+          icon: Icon(Icons.phone_android),
+          contentPadding: EdgeInsets.all(26.0),
           filled: true,
-          fillColor: Colors.brown.shade100,
+          fillColor: Colors.green.shade100,
+          border: OutlineInputBorder(
+            borderSide: BorderSide(
+              style: BorderStyle.solid,
+              width: 20.0,
+              color: Colors.black,
+            ),
+            borderRadius: BorderRadius.circular(84.0),
+            gapPadding: 10.0,
+          ),
         ),
         onChanged: (val) {
           input = val;
