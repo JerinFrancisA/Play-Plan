@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:play_plan/screens/sport_plan2.dart';
 import 'package:play_plan/utilities/boys_info.dart';
 import 'package:play_plan/utilities/constants.dart';
 
@@ -24,6 +25,17 @@ class _SportPlanState extends State<SportPlan> {
           itemCount: sports.length,
           itemBuilder: (BuildContext build, index) {
             return InkWell(
+              onTap: () {
+                planName = sports[index][0];
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SportPlan2(
+                      planName: planName,
+                    ),
+                  ),
+                );
+              },
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6.0),
