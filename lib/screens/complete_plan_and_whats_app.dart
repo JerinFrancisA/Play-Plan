@@ -39,12 +39,28 @@ class _CompletePlanAndWhatsAppState extends State<CompletePlanAndWhatsApp> {
           child: Container(
             child: Button(
               text: 'SEND WHATSAPP',
-              onPressed: () {
+              onPressed: () async {
+                List boys = [];
+                for (int i = 0; i < widget.selectedFriends.length; i++) {
+                  if (widget.selectedFriends[i]) {
+                    boys.add(boysInfo[boysPhoneNumbers[i]]);
+                  }
+                }
+                await Firestore.instance.collection('plans').document().setData(
+                  {
+                    'name': widget.planName,
+                    'date': widget.date,
+                    'time': widget.time,
+                    'boys': boys,
+                  },
+                );
+
                 for (int i = 0; i < widget.selectedFriends.length; i++) {
                   if (widget.selectedFriends[i]) {
                     FlutterOpenWhatsapp.sendSingleMessage(
-                        '91' + boysPhoneNumbers[i],
-                        "Hi ${boysInfo[boysPhoneNumbers[i]]}! would you like to join us for ${widget.planName} on ${widget.date} at ${widget.time} ? Open app for more info");
+                      '91' + boysPhoneNumbers[i],
+                      "Hi ${boysInfo[boysPhoneNumbers[i]]}! would you like to join us for ${widget.planName} on ${widget.date} at ${widget.time} ? Open app for more info",
+                    );
                   }
                 }
               },
