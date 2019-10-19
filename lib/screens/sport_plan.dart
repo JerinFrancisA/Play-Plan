@@ -21,46 +21,65 @@ class _SportPlanState extends State<SportPlan> {
           title: Text('Select Sport'),
           centerTitle: true,
         ),
-        body: ListView.builder(
-          itemCount: sports.length,
-          itemBuilder: (BuildContext build, index) {
-            return InkWell(
-              onTap: () {
-                planName = sports[index][0];
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SportPlan2(
-                      planName: planName,
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.greenAccent.withOpacity(0.7),
+                Colors.blue.withOpacity(0.7),
+              ],
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+            ),
+          ),
+          child: ListView.builder(
+            itemCount: sports.length,
+            itemBuilder: (BuildContext build, index) {
+              return InkWell(
+                onTap: () {
+                  planName = sports[index][0];
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SportPlan2(
+                        planName: planName,
+                      ),
+                    ),
+                  );
+                },
+                child: Card(
+                  color: Colors.white.withOpacity(0.7),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(52.0),
+                    side: BorderSide(
+                      style: BorderStyle.solid,
+                      color: Colors.black,
+                      width: 2.0,
                     ),
                   ),
-                );
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6.0),
-                ),
-                child: Row(
-                  children: <Widget>[
-                    CircleAvatar(
-                      child: Image.network(
-                        sports[index][1],
-                        fit: BoxFit.cover,
+                  elevation: 5.0,
+                  child: Row(
+                    children: <Widget>[
+                      CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          sports[index][1],
+                          scale: 2.0,
+                        ),
+                        radius: 50.0,
                       ),
-                      radius: 50.0,
-                    ),
-                    SizedBox(
-                      width: 30.0,
-                    ),
-                    Text(
-                      sports[index][0],
-                      style: kDefaultTextStyle,
-                    ),
-                  ],
+                      SizedBox(
+                        width: 30.0,
+                      ),
+                      Text(
+                        sports[index][0],
+                        style: kDefaultTextStyle,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );

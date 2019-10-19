@@ -39,7 +39,7 @@ class _UserHomeState extends State<UserHome> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   BigBox(
-                    text: 'PLANS',
+                    text: 'PLAN',
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => PlanPage()));
