@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:play_plan/screens/view_complete_plan.dart';
 import 'package:play_plan/utilities/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -33,7 +34,14 @@ class _ViewPlanPageState extends State<ViewPlanPage> {
                 itemBuilder: (BuildContext context, int index) {
                   return InkWell(
                     onTap: () {
-
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ViewCompletePlan(
+                            plans: plans,
+                          ),
+                        ),
+                      );
                     },
                     child: Card(
                       child: ListTile(
