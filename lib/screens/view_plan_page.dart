@@ -38,7 +38,7 @@ class _ViewPlanPageState extends State<ViewPlanPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => ViewCompletePlan(
-                            plans: plans,
+                            plan: plans[index],
                           ),
                         ),
                       );
