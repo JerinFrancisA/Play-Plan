@@ -29,10 +29,11 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Scaffold(
         body: Center(
           child: Container(
-            decoration: new BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                    'http://cdn.shopify.com/s/files/1/2398/7125/products/soccer-ball-wallpaper-hd-desktop-background-2014-soccer-ball-wallpaper--18_1024x1024.jpg?v=1511671604'),
+                  'http://cdn.shopify.com/s/files/1/2398/7125/products/soccer-ball-wallpaper-hd-desktop-background-2014-soccer-ball-wallpaper--18_1024x1024.jpg?v=1511671604',
+                ),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                     Colors.white.withOpacity(0.5), BlendMode.modulate),
