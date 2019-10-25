@@ -19,7 +19,11 @@ class _UserHomeState extends State<UserHome> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Plan Now'),
+          title: Row(
+            children: <Widget>[
+              Text('We Plan'),
+            ],
+          ),
           centerTitle: true,
           automaticallyImplyLeading: false,
         ),
