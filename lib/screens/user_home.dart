@@ -20,12 +20,7 @@ class _UserHomeState extends State<UserHome> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Row(
-            children: <Widget>[
-              Icon(FontAwesomeIcons.layerGroup),
-              Text('We Plan'),
-            ],
-          ),
+          title: Text('We Plan'),
           centerTitle: true,
           automaticallyImplyLeading: false,
         ),
