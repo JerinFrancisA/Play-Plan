@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:play_plan/custom_widgets/bigbox.dart';
 import 'package:play_plan/screens/plan_page.dart';
 import 'package:play_plan/screens/view_plan_page.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class UserHome extends StatefulWidget {
   UserHome({this.userName, this.userPhoneNumber});
@@ -21,6 +22,7 @@ class _UserHomeState extends State<UserHome> {
         appBar: AppBar(
           title: Row(
             children: <Widget>[
+              Icon(FontAwesomeIcons.layerGroup),
               Text('We Plan'),
             ],
           ),
