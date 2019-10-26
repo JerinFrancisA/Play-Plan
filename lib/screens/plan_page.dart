@@ -15,10 +15,6 @@ class _PlanPageState extends State<PlanPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('Choose Plan'),
-          centerTitle: true,
-        ),
         body: ListView(
           children: [
             Container(

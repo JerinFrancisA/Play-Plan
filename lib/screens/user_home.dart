@@ -22,6 +22,8 @@ class _UserHomeState extends State<UserHome> {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
+            centerTitle: true,
+            automaticallyImplyLeading: false,
             bottom: TabBar(
               tabs: [
                 Tab(

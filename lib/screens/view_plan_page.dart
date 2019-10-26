@@ -15,7 +15,6 @@ class _ViewPlanPageState extends State<ViewPlanPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(),
         body: Container(
           child: StreamBuilder(
             stream: Firestore.instance.collection('plans').snapshots(),
